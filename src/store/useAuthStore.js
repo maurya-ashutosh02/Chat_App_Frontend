@@ -108,6 +108,7 @@ connectSocket:()=>{
   });
   socket.connect();
   set({socket:socket})
+  socket.off("getOnlineUsers");
   socket.on("getOnlineUsers",(userIds)=>{
     set({onlineUsers:userIds})
   })
